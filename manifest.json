@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Arbitrum retryables tools",
+  "description": "This extension provides some tooling to deal with retryable tickets: decodes retryables information in the Etherscan's view of the transaction that submits the retryable ticket",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["http://etherscan.io/tx/*", "https://etherscan.io/tx/*"],
+      "js": ["dist/main.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["http://etherscan.io/*", "https://etherscan.io/*"],
+      "resources": ["dist/scripts/bundle.js"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
