@@ -129,7 +129,7 @@ export const getTransactionInformation = async (
   // Getting the status of the retryable
   retryableInformation.status =
     ['RedeemFailed', 'Created'].includes(retryable.status) &&
-    retryable.timeoutTimestamp < currentDate.getTime()
+    retryable.timeoutTimestamp < currentDate.getTime() / 1000
       ? 'Expired'
       : retryable.status;
 
